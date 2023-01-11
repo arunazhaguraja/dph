@@ -59,8 +59,7 @@ void showValidation(String title, String msg, BuildContext context) {
               borderRadius: BorderRadius.all(Radius.circular(4))),
           content: Text(msg),
           actions: <Widget>[
-            FlatButton(
-                onPressed: () {
+TextButton(                onPressed: () {
                   Navigator.of(context).pop();
                 },
                 child: Text(Consts.OK))

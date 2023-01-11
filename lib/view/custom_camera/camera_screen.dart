@@ -165,7 +165,7 @@ class _CameraScreenState extends State {
     return Expanded(
       child: Align(
         alignment: Alignment.centerLeft,
-        child: FlatButton.icon(
+        child: TextButton.icon(
             onPressed: _onSwitchCamera,
             icon: Icon(_getCameraLensIcon(lensDirection)),
             label: Text(

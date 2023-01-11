@@ -12,7 +12,7 @@ class StudentPresentAbsentApi implements StudentPresentAbsentRepository {
     try {
       http.Response response = await http.post(
           Uri.parse(
-              "https://attendance.uhcitp.in/School/Add_School_Screening"),
+              "https://attendance.timesmed.in/School/Add_School_Screening"),
           body: postJson,
           headers: {
             'Content-type': 'application/json',

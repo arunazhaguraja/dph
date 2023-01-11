@@ -10,12 +10,12 @@ class SchoolListEmpApi implements SchoolListEMPRepository {
   @override
   Future<SchoolEmpModel> fetchSchoolListEmp(String postJson) async {
     print("SchoolList Api: " +
-        "https://attendance.uhcitp.in/School/Get_Date_Wise_Screened_Schools?" +
+        "https://attendance.timesmed.in/School/Get_Date_Wise_Screened_Schools?" +
         postJson);
     try {
       http.Response response = await http.get(
           Uri.parse(
-              "https://attendance.uhcitp.in/School/Get_Date_Wise_Screened_Schools?" +
+              "https://attendance.timesmed.in/School/Get_Date_Wise_Screened_Schools?" +
                   postJson),
           headers: {
             'Content-type': 'application/json',

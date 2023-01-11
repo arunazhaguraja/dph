@@ -953,8 +953,7 @@ class _LeaveRequestContentState extends State<LeaveRequestContent> {
                 borderRadius: BorderRadius.all(Radius.circular(4))),
             content: Text(msg),
             actions: <Widget>[
-              FlatButton(
-                  onPressed: () {
+  TextButton(                  onPressed: () {
                     Navigator.of(context).pop();
                   },
                   child: Text(Consts.OK))

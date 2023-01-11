@@ -1252,8 +1252,7 @@ class _HomePageContentState extends State<HomePageContent>
                 borderRadius: BorderRadius.all(Radius.circular(4))),
             content: Text("Do you want to logout?"),
             actions: <Widget>[
-              FlatButton(
-                  onPressed: () async {
+  TextButton(                  onPressed: () async {
                     Navigator.of(context).pop();
                     // prefs.setString("isLogged", "notLogged");
                     progressDialog(context);
@@ -1276,8 +1275,7 @@ class _HomePageContentState extends State<HomePageContent>
                     }
                   },
                   child: Text(Consts.OK)),
-              FlatButton(
-                  onPressed: () {
+  TextButton(                  onPressed: () {
                     Navigator.of(context).pop();
                   },
                   child: Text("CANCEL")),

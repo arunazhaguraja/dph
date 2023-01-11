@@ -39,7 +39,7 @@ dependencies:
   cached_network_image: ^3.2.0
   url_launcher: ^6.0.9
   flutter_staggered_grid_view: ^0.6.1
-  camera: ^0.9.0
+  camera: ^0.10.1
   path: ^1.8.0
   sqflite: ^2.0.2
   location: ^4.3.0
@@ -65,25 +65,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
 
   assets:
-    - images/logo.png
-    - images/Mail.png
-    - images/Phone.png
-    - images/User.png
-    - images/Notification.png
-    - images/Help.png
-    - images/whatsapp_icon.png
-    - images/Refere.png
-    - images/Dph-Logo.png
-    - images/Tn-Logo.png
-    - images/Nhm-Logo.png
-    - images/medical-history.png
-    - images/immigration.png
-    - images/calendar.png
-    - images/business-report.png
-    - images/log-in.png
-    - images/log-out.png
-    - images/out-of-stock.png
-    - images/img_avatar_4.png
+    - images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

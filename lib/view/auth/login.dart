@@ -1065,7 +1065,7 @@ class _LoginPageContentState extends State<LoginPageContent> {
           ),
         ),
 
-        FlatButton(
+        TextButton(
             onPressed: () {
               userNameOtp = _textUserNameOtp.text.toString().trim();
               if (userNameOtp.isNotEmpty) {

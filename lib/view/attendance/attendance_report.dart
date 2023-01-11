@@ -556,7 +556,7 @@ class _AttendanceReportContentState extends State<AttendanceReportContent> {
                           )),
                           Expanded(
                               child: Text(
-                            i.attendanceInTime! != null
+                            i.attendanceInTime != null
                                 ? i.attendanceInTime!
                                 : "-",
                             textAlign: TextAlign.center,

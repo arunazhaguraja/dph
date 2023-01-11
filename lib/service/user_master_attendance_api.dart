@@ -12,12 +12,13 @@ class UserMasterAttendanceApi implements UserMasterAttendanceRepository {
     try {
       http.Response response = await http.get(
           Uri.parse(
-              "https://attendance.uhcitp.in/Web_API/Get_UserAttendance_List_API?Employee_Id=" +
+              "https://attendance.timesmed.in/Web_API/Get_UserAttendance_List_API?Employee_Id=" +
                   postJson),
           headers: {
             'Content-type': 'application/json',
             "Accept": "application/json",
           });
+      print("Response body ${response.body}");
 
       if (response.statusCode == 200) {
         print("UserMasterAttendanceApi Success Response: " +
@@ -30,7 +31,7 @@ class UserMasterAttendanceApi implements UserMasterAttendanceRepository {
         throw 'UserMasterAttendanceApi Error';
       }
     } on SocketException {
-      throw 'No Internet connection';
+      throw 'No internet connection';
     } on HttpException {
       throw "Couldn't find the post";
     } on FormatException {
