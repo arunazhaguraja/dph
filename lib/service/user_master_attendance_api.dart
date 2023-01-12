@@ -10,15 +10,17 @@ class UserMasterAttendanceApi implements UserMasterAttendanceRepository {
   Future<MasterAttendanceReportModel> fetchUserMasterAttendanceResponse(
       String postJson) async {
     try {
+      print("https://attendance.timesmed.com/Web_API/Get_UserAttendance_List_API?Employee_Id=$postJson");
+
       http.Response response = await http.get(
           Uri.parse(
-              "https://attendance.timesmed.in/Web_API/Get_UserAttendance_List_API?Employee_Id=" +
+              "https://attendance.timesmed.com/Web_API/Get_UserAttendance_List_API?Employee_Id=" +
                   postJson),
           headers: {
             'Content-type': 'application/json',
             "Accept": "application/json",
           });
-      print("Response body ${response.body}");
+
 
       if (response.statusCode == 200) {
         print("UserMasterAttendanceApi Success Response: " +

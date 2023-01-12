@@ -161,90 +161,97 @@ class _LoginPageContentState extends State<LoginPageContent> {
                 print("Failed to insert in db");
               }
             }
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //
-            SchoolEmpModel schoolListEmpModel = await injector.schoolListEmpRepo
-                .fetchSchoolListEmp("Emp_Id=" +
-                    res.data!.id.toString() +
-                    "&From_Date=21-01-2021&To_Date=21-01-2021");
-            if (schoolListEmpModel.success == true) {
-              print("SchoolListEmpDB Response: " + schoolListEmpModel.message!);
-              for (var item in schoolListEmpModel.data!.schoolList!) {
-                // var _kAttendance = item.attendace.toString();
-                print("_kAttendance: " + item.attendace.toString());
-                var result = await db.insertSchoolList(SchoolListDbModel(
-                    schoolId: item.schoolId,
-                    schoolName: item.schoolName,
-                    attendance: item.attendace.toString(),
-                    attendanceStatus: item.attendanceStatus,
-                    lastScreenDate: item.lastScreenedDate.toString()));
-                if (result > 1) {
-                  print("Inserting school list into db : Success");
-                } else {
-                  print("Inserting school list into db : Failed");
-                }
-              }
-            } else {
-              print("SchoolListEmpDB Response: " + schoolListEmpModel.message!);
-              throw Exception('SchoolListEmpDB Failed to load ');
-            }
+            // SchoolEmpModel schoolListEmpModel = await injector.schoolListEmpRepo
+            //     .fetchSchoolListEmp("Emp_Id=" +
+            //         res.data!.id.toString() +
+            //         "&From_Date=21-01-2021&To_Date=21-01-2021");
+            // if (schoolListEmpModel.success == true) {
+            //   print("SchoolListEmpDB Response: " + schoolListEmpModel.message!);
+            //   for (var item in schoolListEmpModel.data!.schoolList!) {
+            //     // var _kAttendance = item.attendace.toString();
+            //     print("_kAttendance: " + item.attendace.toString());
+            //     var result = await db.insertSchoolList(SchoolListDbModel(
+            //         schoolId: item.schoolId,
+            //         schoolName: item.schoolName,
+            //         attendance: item.attendace.toString(),
+            //         attendanceStatus: item.attendanceStatus,
+            //         lastScreenDate: item.lastScreenedDate.toString()));
+            //     if (result > 1) {
+            //       print("Inserting school list into db : Success");
+            //     } else {
+            //       print("Inserting school list into db : Failed");
+            //     }
+            //   }
+            // } else {
+            //   print("SchoolListEmpDB Response: " + schoolListEmpModel.message!);
+            //   throw Exception('SchoolListEmpDB Failed to load ');
+            // }
             //
-            ClassListBySchoolModel classListBySchool =
-                await injector.classListBySchoolRepo.fetchClassListBySchool(
-                    "api/class/all_list/" + res.data!.id.toString());
-            if (classListBySchool.success == true) {
-              print("ClassListByEmpDB Response: " + classListBySchool.message!);
-              for (var item in classListBySchool.data!) {
-                var result = await db.insertClassList(ClassListByEmpDbModel(
-                    schoolId: item.schoolId,
-                    classId: item.classId,
-                    classNm: item.classNm,
-                    section: item.section,
-                    attendanceStatus: item.attendanceStatus,
-                    lastScreenedDate: item.lastScreenedDate,
-                    studentCount: item.studentCount,
-                    uDISECode: item.uDISECode));
-                if (result > 1) {
-                  print("Inserting class list into db : Success");
-                } else {
-                  print("Inserting class list into db : Failed");
-                }
-              }
-            } else {
-              print("ClassListByEmpDB Response: " + classListBySchool.message!);
-              throw Exception('ClassListByEmpDB Failed to load ');
-            }
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // ClassListBySchoolModel classListBySchool =
+            //     await injector.classListBySchoolRepo.fetchClassListBySchool(
+            //         "api/class/all_list/" + res.data!.id.toString());
+            // if (classListBySchool.success == true) {
+            //   print("ClassListByEmpDB Response: " + classListBySchool.message!);
+            //   for (var item in classListBySchool.data!) {
+            //     var result = await db.insertClassList(ClassListByEmpDbModel(
+            //         schoolId: item.schoolId,
+            //         classId: item.classId,
+            //         classNm: item.classNm,
+            //         section: item.section,
+            //         attendanceStatus: item.attendanceStatus,
+            //         lastScreenedDate: item.lastScreenedDate,
+            //         studentCount: item.studentCount,
+            //         uDISECode: item.uDISECode));
+            //     if (result > 1) {
+            //       print("Inserting class list into db : Success");
+            //     } else {
+            //       print("Inserting class list into db : Failed");
+            //     }
+            //   }
+            // } else {
+            //   print("ClassListByEmpDB Response: " + classListBySchool.message!);
+            //   throw Exception('ClassListByEmpDB Failed to load ');
+            // }
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+            // StudentListByClassModel studentListByEmp =
+            //     await injector.studentListClassRepo.fetchStudentListByClass(
+            //         "api/student/all_list/" + res.data!.id.toString());
+            // if (studentListByEmp.success == true) {
+            //   print(
+            //       "StudentListByEmpDB Response: " + studentListByEmp.message!);
+            //   for (var item in studentListByEmp.data!) {
+            //     var result = await db.insertStudentList(StudentListByEmpDbModel(
+            //         schoolId: item.schoolId,
+            //         classId: item.classId,
+            //         studentId: item.studentId,
+            //         uDISECode: item.uDISECode,
+            //         attendance: item.attendance,
+            //         bldGrp: item.bldGrp,
+            //         dOB: item.dOB,
+            //         firstName: item.firstName,
+            //         mobileNo: item.mobileNo,
+            //         screeningId: item.screeningId,
+            //         studentUniqueId: item.studentUniqueId));
+            //     if (result > 1) {
+            //       print("Inserting student list into db : Success");
+            //     } else {
+            //       print("Inserting student list into db : Failed");
+            //     }
+            //   }
+            // } else {
+            //   print(
+            //       "StudentListByEmpDB Response: " + studentListByEmp.message!);
+            //   throw Exception('StudentListByEmpDB Failed to load ');
+            // }
             //
-            StudentListByClassModel studentListByEmp =
-                await injector.studentListClassRepo.fetchStudentListByClass(
-                    "api/student/all_list/" + res.data!.id.toString());
-            if (studentListByEmp.success == true) {
-              print(
-                  "StudentListByEmpDB Response: " + studentListByEmp.message!);
-              for (var item in studentListByEmp.data!) {
-                var result = await db.insertStudentList(StudentListByEmpDbModel(
-                    schoolId: item.schoolId,
-                    classId: item.classId,
-                    studentId: item.studentId,
-                    uDISECode: item.uDISECode,
-                    attendance: item.attendance,
-                    bldGrp: item.bldGrp,
-                    dOB: item.dOB,
-                    firstName: item.firstName,
-                    mobileNo: item.mobileNo,
-                    screeningId: item.screeningId,
-                    studentUniqueId: item.studentUniqueId));
-                if (result > 1) {
-                  print("Inserting student list into db : Success");
-                } else {
-                  print("Inserting student list into db : Failed");
-                }
-              }
-            } else {
-              print(
-                  "StudentListByEmpDB Response: " + studentListByEmp.message!);
-              throw Exception('StudentListByEmpDB Failed to load ');
-            }
-            //
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             Navigator.pop(buildContext!);
             Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(builder: (context) => HomePage()),
